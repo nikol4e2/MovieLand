@@ -23,13 +23,13 @@ function App() {
   useEffect(() => {
     searchMovies('Spiderman')
   }
-  )
+  ,[])
   return (
     <div className="App">
       <h1>MovieLand</h1>
       <div className='search'>
-        <input placeholder='Search for movies' value={searchTearm} onChange={() => { }} />
-        <img src={SearchIcon} alt='search' onClick={() => { }} />
+        <input placeholder='Search for movies' value={searchTearm} onChange={(e) => setSearchTerm(e.target.value)} />
+        <img src={SearchIcon} alt='search' onClick={() => searchMovies(searchTearm)} />
       </div>
       {
         movies?.length > 0
